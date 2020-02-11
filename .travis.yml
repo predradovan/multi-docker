@@ -19,3 +19,17 @@ after_success:
   - docker push radovanovic/multi-nginx
   - docker push radovanovic/multi-server
   - docker push radovanovic/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: eu-west-3
+  app: multi-docker
+  env: MultiDocker-env 
+  bucket_name: elasticbeanstalk-eu-west-3-852876478149
+  bucket_path: multi-docker
+  on:
+    branch: master
+  access_key_id:
+    secret: $AWS_ACCESS_KEY
+  secret_access_key:
+    secret: $AWS_SECRET_KEY
