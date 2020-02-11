@@ -5,24 +5,28 @@
             "name": "client",
             "image": "radovanovic/multi-client",
             "hostname": "client",
+            "MemoryReservation": 256,
             "essential": false
         },
         {
             "name": "server",
             "image": "radovanovic/multi-server",
             "hostname": "api",
+            "MemoryReservation": 256,
             "essential": false
         },
         {
             "name": "worker",
             "image": "radovanovic/multi-worker",
             "hostname": "worker",
+            "MemoryReservation": 256,
             "essential": false
         },
         {
             "name": "nginx",
             "image": "radovanovic/multi-nginx",
             "hostname": "nginx",
+            "MemoryReservation": 512,
             "essential": true,
             "portMappings": [
                 {
